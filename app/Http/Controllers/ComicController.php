@@ -14,7 +14,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $blueBanner = config('sub-banner');
+        $comics = Comic::all();
+        return view('comics.index', compact('comics', 'blueBanner'));
     }
 
     /**
@@ -46,7 +48,8 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        
+        return view('comics.show', compact('comic'));
     }
 
     /**
