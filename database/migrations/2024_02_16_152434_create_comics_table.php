@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->text('description');
-            $table->string('thumb', 255);
-            $table->string('price', 255);
+            $table->text('thumb');
+            $table->string('price', 11);
             $table->string('series', 255);
             $table->date('sale_date');
             $table->string('type', 255);
-            $table->json('artist');
+            $table->json('artists');
             $table->json('writers');
             $table->timestamps();
         });
