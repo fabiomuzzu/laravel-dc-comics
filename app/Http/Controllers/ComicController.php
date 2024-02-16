@@ -48,8 +48,9 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        
-        return view('comics.show', compact('comic'));
+        $artists = json_decode($comic['artists']);
+        $writers = json_decode($comic['writers']);
+        return view('comics.show', compact('comic', 'artists', 'writers'));
     }
 
     /**

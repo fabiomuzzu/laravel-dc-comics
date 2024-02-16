@@ -83,17 +83,35 @@
                             <p class="">Art by:</p>
                         </div>
                         <div class="col-9">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates rem quis vitae soluta enim?</p>
+                            <p> 
+                                @foreach ($artists as $key => $artist)
+                                  {{$artist}}
+                                  @if (end($artists) == $artist)
+                                    . 
+                                  @else
+                                    ,  
+                                  @endif
+                                @endforeach
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 d-flex ">
                     <div class="col-12 d-flex border border-secondary border-top-0 border-start-0 border-end-0">
                         <div class="col-3">
-                            <p class="">Art by:</p>
+                            <p class="">Writed by:</p>
                         </div>
                         <div class="col-9">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates rem quis vitae soluta enim?</p>
+                            <p> 
+                                @foreach ($writers as $key => $writer)
+                                  {{$writer}}
+                                  @if (end($writers) == $writer)
+                                    . 
+                                  @else
+                                    ,  
+                                  @endif
+                                @endforeach
+                            </p>
                         </div>
                     </div>
                 </div>
