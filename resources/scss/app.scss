@@ -88,6 +88,27 @@ main{
         font-weight: 700;
     }
 
+    .current_btn {
+        padding: 15px 20px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 370px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .add_btn {
+        padding: 15px 20px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 370px;
+        right: 50px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
     .load_btn {
         padding: 15px 30px;
         color: white;

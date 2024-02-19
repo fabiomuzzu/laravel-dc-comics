@@ -7,7 +7,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="btn_relative">
-                    <button class="current_btn my_border my_bg">CURRENT SERIES</button> 
+                    <div class="current_btn my_border my_bg">CURRENT SERIES</div>
+                    <div class="add_btn my_border my_bg">
+                        <a class="text-decoration-none text-white" href="{{ route('comics.create')}}">ADD MORE</a>
+                    </div> 
                 </div>
             </div>
         </div>
