@@ -92,12 +92,13 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request, $id)
     {
+       
         $form_data = $request->all();
 
         // Creo una nuova istanza per salvarla nel db
-        $comic = new Comic();
+        $comic = Comic::find($id);
         $comic->title = $form_data['titolo'];
         $comic->description = $form_data['descrizione'];
         $comic->thumb = $form_data['immagine'];
@@ -109,10 +110,10 @@ class ComicController extends Controller
         $comic->writers = json_encode(explode(',',$form_data['scrittore']));
 
         // Salvo la pasta nel db
-        $comic->save();
+        $comic->update();
 
         // Faccio il redirect
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', $id);
     }
 
     /**
