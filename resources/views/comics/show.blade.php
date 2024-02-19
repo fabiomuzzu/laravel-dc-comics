@@ -32,6 +32,13 @@
             </div>
         </div>
 
+        <div class="col-12">
+            <div class="edit_btn my_border bg-success ">
+                <a class="text-decoration-none text-white float-end" href="{{ route('comics.create')}}">EDIT</a>
+            </div>
+
+        </div>
+
         <div class="col-8">
             {{-- Titolo del comics --}}
             <h2 class="py-4">{{$comic['title']}}</h2>
