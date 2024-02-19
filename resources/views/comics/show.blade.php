@@ -33,8 +33,10 @@
         </div>
 
         <div class="col-12">
+
+            {{-- Bottone Modifica --}}
             <div class="edit_btn my_border bg-success ">
-                <a class="text-decoration-none text-white float-end" href="{{ route('comics.create')}}">EDIT</a>
+                <a class="text-decoration-none text-white float-end" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">EDIT</a>
             </div>
 
         </div>
