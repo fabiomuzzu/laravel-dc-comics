@@ -36,17 +36,17 @@ class UpdateComicRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required'        => 'Il campo Comic name è obbligatorio.',
-            'title.max'             => 'Il campo deve avere massimo 255 caratteri',
-            'description.required'  => 'Il campo Description è obbligatorio.',
-            'price.required'        => 'Il campo Price è obbligatorio',
-            'price.max'             => 'Il campo Price deve avere massimo 11 caratteri',
-            'series.required'       => 'Il campo Series è obbligatorio.',
-            'series.max'            => 'Il campo deve avere massimo 255 caratteri',
-            'sale_date.required'    => 'Il campo Sale Date è obbligatorio.',
-            'sale_date.date'        => 'Il campo Sale Date non è valido.',
-            'type.required'         => 'Il campo Type è obbligatorio.',
-            'type.max'              => 'Il campo deve avere massimo 255 caratteri',
+            'title.required'        => 'Il campo Titolo è obbligatorio.',
+            'title.max'             => 'Il campo Titolo deve avere massimo 255 caratteri',
+            'description.required'  => 'Il campo Descrizione è obbligatorio.',
+            'price.required'        => 'Il campo Prezzo è obbligatorio',
+            'price.max'             => 'Il campo Prezzo deve avere massimo 11 caratteri',
+            'series.required'       => 'Il campo Serie è obbligatorio.',
+            'series.max'            => 'Il campo Serie deve avere massimo 255 caratteri',
+            'sale_date.required'    => 'Il campo Data di vendita è obbligatorio.',
+            'sale_date.date'        => 'Il campo Data di vendita non è valido.',
+            'type.required'         => 'Il campo Tipo è obbligatorio.',
+            'type.max'              => 'Il campo Tipo deve avere massimo 255 caratteri',
         ];
     }
 }
