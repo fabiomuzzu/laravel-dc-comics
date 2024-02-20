@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
+use Illuminate\Support\Facades\Validator;
+
 class ComicController extends Controller
 {
     /**
@@ -35,22 +39,24 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
         // Recupero i dati inviati dalla form
         $form_data = $request->all();
 
         // Creo una nuova istanza per salvarla nel db
         $comic = new Comic();
-        $comic->title = $form_data['titolo'];
-        $comic->description = $form_data['descrizione'];
-        $comic->thumb = $form_data['immagine'];
-        $comic->price = $form_data['prezzo'];
-        $comic->series = $form_data['serie'];
-        $comic->sale_date = $form_data['data'];
-        $comic->type = $form_data['tipo'];
-        $comic->artists = json_encode(explode(',',$form_data['artista']));
-        $comic->writers = json_encode(explode(',',$form_data['scrittore']));
+        // $comic->title = $form_data['titolo'];
+        // $comic->description = $form_data['descrizione'];
+        // $comic->thumb = $form_data['immagine'];
+        // $comic->price = $form_data['prezzo'];
+        // $comic->series = $form_data['serie'];
+        // $comic->sale_date = $form_data['data'];
+        // $comic->type = $form_data['tipo'];
+        $comic->fill($form_data);
+        $comic->artists = json_encode(explode(',',$form_data['artists']));
+        $comic->writers = json_encode(explode(',',$form_data['writers']));
+
 
         // Salvo la pasta nel db
         $comic->save();
@@ -92,22 +98,23 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateComicRequest $request, $id)
     {
        
         $form_data = $request->all();
 
         // Creo una nuova istanza per salvarla nel db
         $comic = Comic::find($id);
-        $comic->title = $form_data['titolo'];
-        $comic->description = $form_data['descrizione'];
-        $comic->thumb = $form_data['immagine'];
-        $comic->price = $form_data['prezzo'];
-        $comic->series = $form_data['serie'];
-        $comic->sale_date = $form_data['data'];
-        $comic->type = $form_data['tipo'];
-        $comic->artists = json_encode(explode(',',$form_data['artista']));
-        $comic->writers = json_encode(explode(',',$form_data['scrittore']));
+        // $comic->title = $form_data['titolo'];
+        // $comic->description = $form_data['descrizione'];
+        // $comic->thumb = $form_data['immagine'];
+        // $comic->price = $form_data['prezzo'];
+        // $comic->series = $form_data['serie'];
+        // $comic->sale_date = $form_data['data'];
+        // $comic->type = $form_data['tipo'];
+        $comic->update($form_data);
+        $comic->artists = json_encode(explode(',',$form_data['artists']));
+        $comic->writers = json_encode(explode(',',$form_data['writers']));
 
         // Salvo la pasta nel db
         $comic->update();
