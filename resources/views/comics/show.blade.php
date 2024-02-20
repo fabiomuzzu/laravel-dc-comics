@@ -34,6 +34,15 @@
 
         <div class="col-12">
 
+            {{-- Bottone Cancella --}}
+            <div class="">
+                <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="delete_btn my_border bg-danger" type="submit">DELETE</button>
+                </form>
+            </div>
+
             {{-- Bottone Modifica --}}
             <div class="edit_btn my_border bg-success ">
                 <a class="text-decoration-none text-white float-end" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">EDIT</a>
