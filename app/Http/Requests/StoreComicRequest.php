@@ -13,7 +13,7 @@ class StoreComicRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,32 @@ class StoreComicRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'         => 'required|string|max:255',
+            'description'   => 'required|text',
+            'thumb'         => 'text',
+            'price'         => 'required|string|max:11',
+            'series'        => 'required|string|max:255',
+            'sale_date'     => 'required|date',
+            'type'          => 'required|string|max:255',
+            'artists'       => '',
+            'writers'       => '',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required'        => 'Il campo Comic name è obbligatorio.',
+            'title.max'             => 'Il campo deve avere massimo 255 caratteri',
+            'description.required'  => 'Il campo Description è obbligatorio.',
+            'price.required'        => 'Il campo Price è obbligatorio',
+            'price.max'             => 'Il campo deve avere massimo 11 caratteri',
+            'series.required'       => 'Il campo Series è obbligatorio.',
+            'series.max'            => 'Il campo deve avere massimo 255 caratteri',
+            'sale_date.required'    => 'Il campo Sale Date è obbligatorio.',
+            'sale_date.date'        => 'Il campo Sale Date non è valido.',
+            'type.required'         => 'Il campo Type è obbligatorio.',
+            'type.max'              => 'Il campo deve avere massimo 255 caratteri',
         ];
     }
 }
